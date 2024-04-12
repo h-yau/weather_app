@@ -1,53 +1,37 @@
-1. npm init -y
-2. npm install eslint eslint-config-airbnb-base eslint-plugin-import --save-dev
-3. npm install eslint-plugin-prettier --save-dev
-4. npm install eslint-config-prettier --save-dev
-5. npm install webpack webpack-cli --save-dev
-6. npm install --save-dev style-loader css-loader
-7. npm install --save-dev csv-loader xml-loader
-8. npm uninstall IF ANYTHING is not needed
+# Weather App
 
-9. npm install --save-dev webpack-dev-server
-10. npm run build
+This is a simple weather app built with JavaScript, CSS, and webpack. It utilizes the WeatherAPI to fetch temperature and weather information for a user's desired destination.
 
-11. remember to add a .gitignore file
+## Live Demo
 
-12. npm install -D babel-loader @babel/core @babel/preset-env webpack
+Visit the live repo [here](https://h-yau.github.io/weather_app)!
 
-.eslintrc.js ...
+## Features
 
-module.exports = {
-env: {
-browser: true,
-es2021: true,
-},
-extends: ['eslint:recommended', 'airbnb-base', 'prettier'],
-overrides: [
-{
-env: {
-node: true,
-},
-files: ['.eslintrc.{js,cjs}'],
-parserOptions: {
-sourceType: 'script',
-},
-},
-],
-parserOptions: {
-ecmaVersion: 'latest',
-sourceType: 'module',
-},
-rules: {
-quotes: ['error', 'single'],
-},
-};
+- Allows users to enter their desired destination
+- Fetches temperature and weather information using the WeatherAPI
+- Displays the retrieved data in a user-friendly format
+- Uses webpack for bundling JavaScript and CSS files
 
-.eslintignore ...
+## How to Use
 
-./node_modules
-./dist
+1. Clone this repository to your local machine.
+2. Navigate to the project directory.
+3. Run `npm install` to install the dependencies.
+4. Run `npm start` to start the development server.
+5. Open your web browser and go to `http://localhost:8080` to view the app.
 
-.gitignore ...
+## Technologies Used
 
-node_modules/
-node/
+- JavaScript
+- CSS
+- webpack
+- WeatherAPI
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+Feel free to customize this template further based on your specific project details and requirements!
