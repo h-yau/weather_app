@@ -1,4 +1,4 @@
 import './style.css';
-import { setupPageElements } from './javascript/layout';
+import { setupPageElements } from './javascript/components/layout';
 
 setupPageElements();
