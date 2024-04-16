@@ -14,10 +14,27 @@ const submitButton = () => {
   return buttonElement;
 };
 
+const dataTableDiv = () => {
+  const dataTable = document.createElement('div');
+  dataTable.dataset.dataId = 'dataTable';
+  return dataTable;
+};
+
+const clearElement = (htmlElement) => {
+  htmlElement.innerHTML = '';
+};
+
 const printData = (weatherDataJson) => {
   const body = document.querySelector('body');
-  const dataTable = document.createElement('div');
-  body.appendChild(dataTable);
+
+  let dataTable = document.querySelector('div[data-data-id="dataTable"]');
+
+  if (dataTable == null || dataTable == undefined) {
+    dataTable = dataTableDiv();
+    body.appendChild(dataTable);
+  } else {
+    clearElement(dataTable);
+  }
 
   for (const key in weatherDataJson.location) {
     const value = weatherDataJson.location[key];
