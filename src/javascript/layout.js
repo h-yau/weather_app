@@ -15,16 +15,22 @@ const submitButton = () => {
 };
 
 const printData = (weatherDataJson) => {
+  const body = document.querySelector('body');
+  const dataTable = document.createElement('div');
+  body.appendChild(dataTable);
+
   for (const key in weatherDataJson.location) {
     const value = weatherDataJson.location[key];
-    const body = document.querySelector('body');
-    body.innerHTML += `<div>${key}: ${value}</div>`;
+    const div = document.createElement('div');
+    div.textContent = `${key}: ${value}`;
+    dataTable.appendChild(div);
   }
 
   for (const key in weatherDataJson.current) {
     const value = weatherDataJson.current[key];
-    const body = document.querySelector('body');
-    body.innerHTML += `<div>${key}: ${value}</div>`;
+    const div = document.createElement('div');
+    div.textContent = `${key}: ${value}`;
+    dataTable.appendChild(div);
   }
 };
 
@@ -33,7 +39,7 @@ const getCurrentWeather = async (city) => {
 
   try {
     const weatherData = await fetch(url, { mode: 'cors' });
-    console.log(weatherData);
+
     if (!weatherData.ok) {
       throw new Error(weatherData.message);
     }
@@ -61,10 +67,8 @@ const form = () => {
   return formElement;
 };
 
-const setupPageElements = () => {
+export const setupPageElements = () => {
   const bodyElement = document.querySelector('body');
 
   bodyElement.appendChild(form());
 };
-
-export { setupPageElements as default };
