@@ -21,7 +21,9 @@ const dataTableDiv = () => {
 };
 
 const clearElement = (htmlElement) => {
-  htmlElement.innerHTML = '';
+  while (htmlElement.lastElementChild) {
+    htmlElement.removeChild(htmlElement.lastElementChild);
+  }
 };
 
 const printData = (weatherDataJson) => {
